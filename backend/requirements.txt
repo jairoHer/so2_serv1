@@ -1,0 +1,7 @@
+requests
+Flask
+requests
+flask-wtf
+flask-cors
+pymongo
+names
