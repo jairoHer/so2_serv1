@@ -13,4 +13,4 @@ RUN pip install -r requirements.txt
 
 RUN mkdir -p /elements/info
 #COPY app.py /app
-CMD python erp.py
+CMD python app.py

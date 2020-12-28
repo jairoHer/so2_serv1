@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div>
+      <a class="btn btn-primary" href="{{ url_for('registro_documento') }}" role="button">Nuevo Documento</a>
+    </div>
+    {%for documento in documentos %}
+    <article class="media content-section">
+            <div class="media-body">
+              <div class="article-metadata">
+                <a class="mr-2" href="#">{{ documento.tipo }}</a>
+              </div>
+              <h2><a class="article-title" href="#">{{ documento.titulo }}</a></h2>
+              <p class="article-content">{{ documento.contenido }}</p>
+              <div class="article-metadata">
+                <p class="article-content">Encargado: {{ documento.encargado }}</p>
+              </div>
+            </div>
+    </article>
+    {% endfor %}
+{% endblock content %}

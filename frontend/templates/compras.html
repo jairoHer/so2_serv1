@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div>
+      <a class="btn btn-primary" href="{{ url_for('registro_compra') }}" role="button">Agregar compra</a>
+    </div>
+    {%for compra in compras %}
+    <article class="media content-section">
+      <div class="media-body">
+        <h2><a class="article-title" href="#">{{ compra.empresa }}</a></h2>
+        <div class="article-metadata">
+          <p>Cliente:</p>
+          <p class="article-content">{{ compra.compra }}</p>
+        </div>
+        <div class="article-metadata">
+          <p>Descripcion:</p>
+          <p class="article-content">{{ compra.descripcion }}</p>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+{% endblock content %}

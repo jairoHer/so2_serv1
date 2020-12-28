@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div>
+      <a class="btn btn-primary" href="{{ url_for('registro_cliente') }}" role="button">Agregar Cliente</a>
+    </div>
+    {%for cliente in clientes %}
+    <article class="media content-section">
+      <div class="media-body">
+        <h2><a class="article-title" href="#">{{ cliente.nombre }}</a></h2>
+        <div class="article-metadata">
+          <p>Empresa:</p>
+          <p class="article-content">{{ cliente.empresa }}</p>
+        </div>
+        <div class="article-metadata">
+          <p>Direccion:</p>
+          <p class="article-content">{{ cliente.direccion }}</p>
+        </div>
+        <div class="article-metadata">
+          <p>Telefono:</p>
+          <p class="article-content">{{ cliente.telefono }}</p>
+        </div>
+        <div class="article-metadata">
+          <p>Nit:</p>
+          <p class="article-content">{{ cliente.nit }}</p>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+{% endblock content %}

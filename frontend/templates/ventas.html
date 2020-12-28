@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div>
+      <a class="btn btn-primary" href="{{ url_for('registro_venta') }}" role="button">Agregar Venta</a>
+    </div>
+    {%for venta in ventas %}
+    <article class="media content-section">
+      <div class="media-body">
+        <h2><a class="article-title" href="#">{{ venta.empresa }}</a></h2>
+        <div class="article-metadata">
+          <p>Cliente:</p>
+          <p class="article-content">{{ venta.cliente }}</p>
+        </div>
+        <div class="article-metadata">
+          <p>Valor de venta:</p>
+          <p class="article-content">{{ venta.venta }}</p>
+        </div>
+        <div class="article-metadata">
+          <p>Descripcion:</p>
+          <p class="article-content">{{ venta.descripcion }}</p>
+        </div>
+        <div class="article-metadata">
+          <p>Vendedor</p>
+          <p class="article-content">{{ venta.vendedor }}</p>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+{% endblock content %}
