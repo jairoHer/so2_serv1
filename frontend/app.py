@@ -11,7 +11,8 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'e9d830bde37db8ca424cb0b55af9dac2'
 CORS(app)
 
-clienteMongo = MongoClient('mongodb://104.197.235.139',port=27017)
+#clienteMongo = MongoClient('mongodb://104.197.235.139',port=27017)
+clienteMongo = MongoClient('mongodb://10.138.0.4',port=27017)
 db = clienteMongo['erp']
 comprasss = db['compras']
 ventasss = db['ventas']
